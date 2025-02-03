@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog Personal de Luis Casillas</title>
-  <!-- Fuente fresca para darle onda -->
+  <!-- Fuente para darle esa onda cool -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
   <style>
     /* ==============================
-       Reset y estilos globales
+       Reset global y estilos básicos
        ============================== */
     * {
       margin: 0;
@@ -21,7 +21,7 @@
       color: #333;
       line-height: 1.6;
     }
-    
+
     /* ==============================
        Header y Navegación
        ============================== */
@@ -60,17 +60,20 @@
     }
     
     /* ==============================
-       Landing Page con espacio para Fotografías
+       Landing Page con foto de fondo y animaciones CSS
        ============================== */
     #landing-page {
       position: relative;
       height: 60vh;
-      background: #000; /* Fondo de reserva, cámbialo por tu imagen o slider */
+      /* Aquí ponemos la foto de fondo */
+      background: url('nini.jpg') no-repeat center center/cover;
       display: flex;
       align-items: center;
       justify-content: center;
+      /* Animación de entrada para la sección completa */
+      animation: zoomIn 5s ease;
     }
-    /* Capa oscura para mejorar la legibilidad de los textos sobre imágenes */
+    /* Capa oscura para resaltar el contenido sobre la imagen */
     #landing-page::before {
       content: "";
       position: absolute;
@@ -80,20 +83,36 @@
       height: 100%;
       background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4));
     }
-    /* Contenido de la landing page */
+    /* Contenedor del contenido de la landing page */
     #landing-page .landing-content {
       position: relative;
       color: #fff;
       text-align: center;
       z-index: 1;
       padding: 0 20px;
+      /* Animación para el texto */
+      animation: fadeInUp 2s ease;
     }
-    #landing-page .landing-content h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
+    /* Animaciones */
+    @keyframes zoomIn {
+      0% {
+        transform: scale(1.1);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
     }
-    #landing-page .landing-content p {
-      font-size: 1.2rem;
+    @keyframes fadeInUp {
+      0% {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
     }
     
     /* ==============================
@@ -149,7 +168,7 @@
   </style>
 </head>
 <body>
-  <!-- Encabezado del Blog -->
+  <!-- Encabezado -->
   <header>
     <div class="logo">Luis Casillas</div>
     <nav>
@@ -162,31 +181,20 @@
     </nav>
   </header>
   
-  <!-- Landing Page: Aquí es donde la magia visual ocurre -->
+  <!-- Landing Page con fondo e animaciones -->
   <section id="landing-page">
-    <!-- 
-      Aquí tienes un espacio en blanco para incorporar tus fotografías.
-      Puedes integrar un slider, una galería o incluso un video de fondo. 
-      Ejemplo: Agrega un div con class "carousel" y personalízalo a tu gusto.
-    -->
     <div class="landing-content">
-      <h1>Welcome</h1>
-      <p>Donde el pasado se encuentra con el futuro, y cada post es una aventura.</p>
+      <h1>Bienvenido al Blog de Luis Casillas</h1>
+      <p>Fusionando el pasado con el futuro, un pixel a la vez.</p>
     </div>
   </section>
   
-  <!-- Contenido Principal del Blog -->
+  <!-- Contenido Principal -->
   <section id="contenido">
     <article class="post">
       <h2>Título del Primer Post</h2>
       <p>
-        ¡Hola, mundo! Este es mi primer post en el blog. Aquí comparto mis ideas, anécdotas y reflexiones con ese toque irreverente y auténtico que solo la vida real puede inspirar. ¡Súbete a esta montaña rusa de pensamientos y disfruta el viaje!
-      </p>
-    </article>
-    <article class="post">
-      <h2>Otro Post Inspirador</h2>
-      <p>
-        Explora el pasado, abraza el futuro. Cada palabra aquí es un puente entre lo que fuimos y lo que seremos. Dale play a la nostalgia y prepárate para soñar a lo grande.
+        ¡Hola, mundo! Este es mi primer post en el blog. Aquí comparto mis ideas y anécdotas con ese toque irreverente y auténtico que define mi estilo. ¡Disfruta el viaje!
       </p>
     </article>
   </section>
