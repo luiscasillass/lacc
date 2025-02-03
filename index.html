@@ -1,36 +1,199 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Primera Página</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 50px;
-            background-color: #f4f4f4;
-        }
-        h1 {
-            color: #333;
-        }
-        button {
-            background-color: #007bff;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Personal de Luis Casillas</title>
+  <!-- Fuente fresca para darle onda -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+  <style>
+    /* ==============================
+       Reset y estilos globales
+       ============================== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #f0f0f0;
+      color: #333;
+      line-height: 1.6;
+    }
+    
+    /* ==============================
+       Header y Navegación
+       ============================== */
+    header {
+      background-color: #1a1a1a;
+      color: #fff;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    header .logo {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    nav {
+      margin-top: 10px;
+      width: 100%;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+    }
+    nav ul li {
+      margin: 0 15px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+    nav ul li a:hover {
+      color: #e67e22;
+    }
+    
+    /* ==============================
+       Landing Page con espacio para Fotografías
+       ============================== */
+    #landing-page {
+      position: relative;
+      height: 60vh;
+      background: #000; /* Fondo de reserva, cámbialo por tu imagen o slider */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    /* Capa oscura para mejorar la legibilidad de los textos sobre imágenes */
+    #landing-page::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4));
+    }
+    /* Contenido de la landing page */
+    #landing-page .landing-content {
+      position: relative;
+      color: #fff;
+      text-align: center;
+      z-index: 1;
+      padding: 0 20px;
+    }
+    #landing-page .landing-content h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+    #landing-page .landing-content p {
+      font-size: 1.2rem;
+    }
+    
+    /* ==============================
+       Sección de Contenido Principal
+       ============================== */
+    #contenido {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .post {
+      background-color: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .post h2 {
+      margin-bottom: 15px;
+      font-size: 2rem;
+      color: #333;
+    }
+    .post p {
+      font-size: 1rem;
+      margin-bottom: 10px;
+      line-height: 1.8;
+    }
+    
+    /* ==============================
+       Footer
+       ============================== */
+    footer {
+      background-color: #1a1a1a;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+    
+    /* ==============================
+       Responsividad para móviles
+       ============================== */
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+      }
+      nav ul li {
+        margin: 10px 0;
+      }
+      #landing-page .landing-content h1 {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <h1>¡Welcome to my first website!</h1>
-    <p>This is the first test of my own domain! 🎉</p>
-    <button onclick="alert('¡bye!')">Haz clic aquí</button>
+  <!-- Encabezado del Blog -->
+  <header>
+    <div class="logo">Luis Casillas</div>
+    <nav>
+      <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Acerca de</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <!-- Landing Page: Aquí es donde la magia visual ocurre -->
+  <section id="landing-page">
+    <!-- 
+      Aquí tienes un espacio en blanco para incorporar tus fotografías.
+      Puedes integrar un slider, una galería o incluso un video de fondo. 
+      Ejemplo: Agrega un div con class "carousel" y personalízalo a tu gusto.
+    -->
+    <div class="landing-content">
+      <h1>Bienvenido al Blog de Luis Casillas</h1>
+      <p>Donde el pasado se encuentra con el futuro, y cada post es una aventura.</p>
+    </div>
+  </section>
+  
+  <!-- Contenido Principal del Blog -->
+  <section id="contenido">
+    <article class="post">
+      <h2>Título del Primer Post</h2>
+      <p>
+        ¡Hola, mundo! Este es mi primer post en el blog. Aquí comparto mis ideas, anécdotas y reflexiones con ese toque irreverente y auténtico que solo la vida real puede inspirar. ¡Súbete a esta montaña rusa de pensamientos y disfruta el viaje!
+      </p>
+    </article>
+    <article class="post">
+      <h2>Otro Post Inspirador</h2>
+      <p>
+        Explora el pasado, abraza el futuro. Cada palabra aquí es un puente entre lo que fuimos y lo que seremos. Dale play a la nostalgia y prepárate para soñar a lo grande.
+      </p>
+    </article>
+  </section>
+  
+  <!-- Pie de Página -->
+  <footer>
+    &copy; 2025 Luis Casillas. Todos los derechos reservados.
+  </footer>
 </body>
 </html>
