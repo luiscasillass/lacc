@@ -1,0 +1,57 @@
+body {
+    background-color: white;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    text-align: center;
+    padding: 40px 20px 10px 20px;
+  }
+  
+  .logo {
+    max-width: 120px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  h1 {
+    font-size: 2.2em;
+    margin-bottom: 10px;
+  }
+  
+  .intro {
+    font-size: 1.1em;
+    color: #555;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  main {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+  
+  h2 {
+    font-size: 1.4em;
+    margin-top: 40px;
+    color: #222;
+  }
+  
+  ul {
+    padding-left: 20px;
+    margin-top: 10px;
+  }
+  
+  ul li {
+    margin-bottom: 10px;
+  }
+  
+  p {
+    margin-top: 10px;
+    font-size: 0.95em;
+  }
+  
