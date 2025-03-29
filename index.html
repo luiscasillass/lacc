@@ -2,206 +2,66 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog Personal de Luis Casillas</title>
-  <!-- Fuente para darle esa onda cool -->
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
-  <style>
-    /* ==============================
-       Reset global y estilos básicos
-       ============================== */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background-color: #f0f0f0;
-      color: #333;
-      line-height: 1.6;
-    }
-
-    /* ==============================
-       Header y Navegación
-       ============================== */
-    header {
-      background-color: #1a1a1a;
-      color: #fff;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    header .logo {
-      font-size: 2rem;
-      font-weight: bold;
-    }
-    nav {
-      margin-top: 10px;
-      width: 100%;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-    }
-    nav ul li {
-      margin: 0 15px;
-    }
-    nav ul li a {
-      text-decoration: none;
-      color: #fff;
-      font-size: 1rem;
-      transition: color 0.3s ease;
-    }
-    nav ul li a:hover {
-      color: #e67e22;
-    }
-    
-    /* ==============================
-       Landing Page con foto de fondo y animaciones CSS
-       ============================== */
-    #landing-page {
-      position: relative;
-      height: 60vh;
-      /* Aquí ponemos la foto de fondo */
-      background: url('nini.jpg') no-repeat center center/cover;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      /* Animación de entrada para la sección completa */
-      animation: zoomIn 5s ease;
-    }
-    /* Capa oscura para resaltar el contenido sobre la imagen */
-    #landing-page::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4));
-    }
-    /* Contenedor del contenido de la landing page */
-    #landing-page .landing-content {
-      position: relative;
-      color: #fff;
-      text-align: center;
-      z-index: 1;
-      padding: 0 20px;
-      /* Animación para el texto */
-      animation: fadeInUp 2s ease;
-    }
-    /* Animaciones */
-    @keyframes zoomIn {
-      0% {
-        transform: scale(1.1);
-        opacity: 0;
-      }
-      100% {
-        transform: scale(1);
-        opacity: 1;
-      }
-    }
-    @keyframes fadeInUp {
-      0% {
-        transform: translateY(20px);
-        opacity: 0;
-      }
-      100% {
-        transform: translateY(0);
-        opacity: 1;
-      }
-    }
-    
-    /* ==============================
-       Sección de Contenido Principal
-       ============================== */
-    #contenido {
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-    .post {
-      background-color: #fff;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-    .post h2 {
-      margin-bottom: 15px;
-      font-size: 2rem;
-      color: #333;
-    }
-    .post p {
-      font-size: 1rem;
-      margin-bottom: 10px;
-      line-height: 1.8;
-    }
-    
-    /* ==============================
-       Footer
-       ============================== */
-    footer {
-      background-color: #1a1a1a;
-      color: #fff;
-      text-align: center;
-      padding: 20px;
-    }
-    
-    /* ==============================
-       Responsividad para móviles
-       ============================== */
-    @media (max-width: 768px) {
-      nav ul {
-        flex-direction: column;
-      }
-      nav ul li {
-        margin: 10px 0;
-      }
-      #landing-page .landing-content h1 {
-        font-size: 2.5rem;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Encabezado -->
+
   <header>
-    <div class="logo">Luis Casillas</div>
-    <nav>
-      <ul>
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#">Acerca de</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Contacto</a></li>
-      </ul>
-    </nav>
+    <img src="logo_tec.png" alt="logo tec" class="logo">
+    <p class="intro">Luis Andrés Casillas - A01645008
+    </p>
+    <p class="intro">27/03/2025
+    </p>
+    <h1>Construcción de Software y Toma de Desiciones</h1>
+    <h2>Explorando Nuestro Perfil como Desarrolladores</h2>
   </header>
-  
-  <!-- Landing Page con fondo e animaciones -->
-  <section id="landing-page">
-    <div class="landing-content">
-      <h1>Bienvenido al Blog de Luis Casillas</h1>
-      <p>Fusionando el pasado con el futuro, un pixel a la vez.</p>
-    </div>
-  </section>
-  
-  <!-- Contenido Principal -->
-  <section id="contenido">
-    <article class="post">
-      <h2>Título del Primer Post</h2>
-      <p>
-        ¡Hola, mundo! Este es mi primer post en el blog. Aquí comparto mis ideas y anécdotas con ese toque irreverente y auténtico que define mi estilo. ¡Disfruta el viaje!
-      </p>
-    </article>
-  </section>
-  
-  <!-- Pie de Página -->
-  <footer>
-    &copy; 2025 Luis Casillas. Todos los derechos reservados.
-  </footer>
+
+  <main>
+    <section>
+      <h2>1. Formación y Aprendizaje</h2>
+      <ul>
+        <li>¿Cuál fue el motivo que elegiste desarrollo de software? Lo que me atrajo fue el potencial que tiene la computación para cambiar el mundo, y el software es lo que realmente mueve todo eso. Me impresionó ver cómo detrás de casi todo lo que usamos hoy (desde una app hasta un programa que maneja miles de datos) hay líneas de código que alguien escribió para resolver un problema. Me gustó la idea de poder construir cosas que sirvan, que escalen, que mejoren procesos o incluso que impacten a muchas personas. </li>
+        <li>¿Cuál fue la materia o proyecto más desafiante en tu formación y cómo lo superaste? Fue sin duda Cálculo Diferencial e Integral. Durante mucho tiempo estuve dando todo para sobresalir en la materia estudiando tiempos extras ya que fue mi primer acercamiento a dihcos temas.</li>
+        <li>¿Qué habilidades crees que son esenciales en la educación de un desarrollador y por qué? Primero iniciaré mencionando las Soft Skills ya que para crear sistemas o proyectos eficientes y escalables se ven involucradas un gran número de personas, las cuales es necesario saber liderar, empatizar y delegar. También es necesario un pensamiento crítico avanzado apto para la resolución de problemas ya que el mismo avance tan rápido de la industria exige a los ingenieros idear y crear sistemas más inteligentes y sofisticados. Por último yo creo que la inteligencia emocional es un pilar fundamental para una carrera exitosa. No es un tema muy sonado alrededor de los involucrados en la industria, sin embargo con los acercamientos que he tenido me he dado cuenta que es fundamental tener un nivel de inteligencia emocional elevado para poder competir dentro de la industria. </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>2. Experiencia y Especialización</h2>
+      <ul>
+        <li>¿En qué área del desarrollo de software trabajas actualmente o te gustaría trabajar y por qué? Actualmente no estoy como desarrollador sino como SDR trabajando full time. Decidí entrar a un empleo de venta de software ya que quiero aprender como es la intersección entre los clientes y el producto de software que ofrecemos, creo firmemente que formará una base muy importante dentro de la carrera. Pasando algún tiempo me gustaría estara en un puesto de Project Manager o ingeniero en ciberseguridad ya que creo que ambas áreas aportan un gran valor crítico para las empresas. </li>
+        <li>¿Has trabajado en algún proyecto que te haya marcado o del que estés especialmente orgulloso? Sí, durante los últimos dos años estuve trabajando como vendedor y posteriormente como ingeniero en la área de bases de datos en la Startup JARO Freight. Mi trabajo en JARO me llevó a abrirme un gran camino tanto personal como profesional, me ayudó a orientarme sobre la marcha y a aprender a trabajar bajo presión, cualidades que siempre agradeceré haberlas aprendido a corta edad. </li>
+        <li>Si pudieras aprender una nueva tecnología o lenguaje este año, ¿cuál sería y por qué?</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>3. Forma de Trabajar y Mentalidad</h2>
+      <ul>
+        <li>¿Eres más de trabajo en equipo o prefieres trabajar solo? ¿Por qué? Prefiero 100% trabajar en equipo. Me considero una persona muy social, me encanta crear nuevas relaciones y expandir cada vez más mi red de contactos. Al trabajar en equipo, si se hace una correcta estructuración, se puede llegar a crear productos o sistemas mucho más eficientes que siendo una sola persona. La colaboración, mezcla de culturas, ideas, pensamientos y experiencias es lo que enriquece a un gran equipo y por ende lleva a un gran resultado. </li>
+        <li>¿Cómo manejas los errores o bugs en tu código? Primero trato de hacer una profunda introspección crítica analizando si realmente estoy entendiendo, en primer lugar, el problema a resolver, en segundo, como lo estoy tratando de hacer. Depués de pasar por ese proceso, trato de resolver el problema en papel o pizarrón, tomando en cuenta todos los insights o puntos claves que debo de considerar, siempre y cuando sin perder de vista cuál busco que sea el resultado final. Si después de esto sigo sin poder resolverlo, busco ayuda con ingenieros experimentados. </li>
+        <li>¿Cuál es tu filosofía cuando trabajas en código de otros? Analizar y tratar de entender a profundidad la manera en que esta estructurado su código, después de esto, me apego lo más posible a mejorarlo, pero claro, siempre tomando en consideración que puede haber punto de mejora en la estructura, si esto es así, se debe de revisar con el resto del equipo.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>4. Tecnología y Tendencias</h2>
+      <ul>
+        <li>¿Qué herramienta, librería o framework descubriste recientemente? Durante mi estancia en JARO utilicé Selenium para hacer Web Scraping. La finalidad era extraer toda la información que nos pudiera ser valiosa sobre transportistas en México. Me gustó bastante ya que me di cuenta de como funcionaba WS y las ventajas que nos podría traer si la utilizábamos de manera correcta. </li>
+        <li>¿Qué fuente de información tecnológica recomiendas? Como referencia utilizo bastante la información que dan las empresas y personalidades en redes sociales, especialmente en X o también en sus sitios web oficiales.  </li>
+        <li>¿Qué tendencia tecnológica transformará la industria en 5 años? Será totalmente ML, DL y AI. Creo que estamos en una era de revolución tecnológica, una de las más importantes y que le traerá mas valor al ser humano. </li>
+      </ul> 
+    </section>
+
+    <section>
+      <h2>5. Un Toque Personal (15%)</h2>
+      <ul>
+        <li>¿Qué hobby disfrutas fuera de la programación y cómo influye en ti?</li>
+        <li>Si no fueras desarrollador, ¿qué harías? sería financiero o músico. Desde niño he tenido curiosidad de explorar ambas (en música desarrolle habilidades en piano, guitarra y acordeón)</li>
+        <li>Comparte una frase o enseñanza que te inspire. Si un pájaro se posa sobre una rama, ¿debería de confiar en la rama o en sus propias alas? </li>
+      </ul>
+    </section>
+  </main>
+
 </body>
 </html>
