@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Luis Casillas — Thoughts, Papers, Projects</title>
+  <meta name="description" content="Luis Casillas — founder & CS student. Thoughts, papers, projects, resume, and mananea (daily notes).">
+  <meta name="color-scheme" content="light dark">
+  <meta property="og:title" content="Luis Casillas — Thoughts, Papers, Projects">
+  <meta property="og:description" content="Minimalist–retro blog & portfolio.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/og.png">
+
+  <!-- Fonts: modern sans + retro serif + mono accent -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,600&family=IBM+Plex+Mono:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Home">
+        <span class="brand-mark">LC</span>
+        <span class="brand-name">Luis Casillas</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="navlinks">
+          <span class="nav-toggle-bar"></span>
+          <span class="sr-only">Menu</span>
+        </button>
+        <ul id="navlinks" class="nav-links">
+          <li><a href="#thoughts" data-section="thoughts" class="nav-link">Thoughts</a></li>
+          <li><a href="#papers" data-section="papers" class="nav-link">Papers</a></li>
+          <li><a href="#resume" data-section="resume" class="nav-link">Resume</a></li>
+          <li><a href="lacc/mananea.html" class="nav-link">Mananea</a></li>
+          <li><a href="#projects" data-section="projects" class="nav-link">Projects</a></li>
+          <li><button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">◐</button></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section id="top" class="hero">
+      <div class="container hero-inner">
+        <p class="eyebrow">Notes on building</p>
+        <h1 class="hero-title">
+          I write to <span class="underline">think</span>,<br/>
+          I build to <span class="underline">learn</span>.
+        </h1>
+        <p class="hero-subtitle">
+          CS @ ITESM GDL · Founder of <span class="mono">Signai</span> · Lover of clean systems, sturdy design, and long-term games.
+        </p>
+        <div class="hero-cta">
+          <a class="btn" href="#thoughts">Read Thoughts</a>
+          <a class="btn alt" href="#projects">See Projects</a>
+        </div>
+        <div class="hero-marquee" aria-hidden="true">
+          <span>Minimal · Retro · Intentional · Durable · Quiet Power · </span>
+          <span>Minimal · Retro · Intentional · Durable · Quiet Power · </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- THOUGHTS -->
+    <section id="thoughts" class="section">
+      <div class="container">
+        <header class="section-header">
+          <h2>Thoughts</h2>
+          <p class="section-kicker">Essays, field notes, and durable ideas.</p>
+        </header>
+        <div id="thoughtsGrid" class="card-grid"></div>
+        <footer class="section-footer">
+          <a class="ghost" href="#" id="moreThoughts">Older posts →</a>
+        </footer>
+      </div>
+    </section>
+
+    <!-- PAPERS -->
+    <section id="papers" class="section subtle">
+      <div class="container">
+        <header class="section-header">
+          <h2>Papers</h2>
+          <p class="section-kicker">Write-ups, research, and technical docs.</p>
+        </header>
+        <div id="papersList" class="list"></div>
+      </div>
+    </section>
+
+    <!-- RESUME -->
+    <section id="resume" class="section">
+      <div class="container">
+        <header class="section-header">
+          <h2>Resume</h2>
+          <p class="section-kicker">Snapshot of work, skills, and signals.</p>
+        </header>
+
+        <article class="resume">
+          <div class="resume-col">
+            <h3 class="resume-label">Experience</h3>
+            <ul class="timeline" id="expList"></ul>
+            <h3 class="resume-label">Education</h3>
+            <ul class="timeline" id="eduList"></ul>
+          </div>
+          <div class="resume-col">
+            <h3 class="resume-label">Skills</h3>
+            <ul class="chips" id="skillChips"></ul>
+            <h3 class="resume-label">Signals</h3>
+            <ul class="signals" id="signals"></ul>
+
+            <div class="resume-actions">
+              <a class="btn" id="downloadResume" href="assets/Luis-Casillas-Resume.pdf" download>Download PDF</a>
+              <a class="btn alt" href="mailto:kuiscasillas@gmail.com">Contact</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- MANANEA -->
+    <section id="mananea" class="section subtle">
+      <div class="container">
+        <header class="section-header">
+          <h2>Mananea</h2>
+          <p class="section-kicker">Daily log — tiny notes, tiny moves, compounding.</p>
+        </header>
+        <div class="mananea-feed">
+  <a class="card" href="lacc/mananea.html">
+    <div class="meta"><span>Open</span><span>•</span><span>External</span></div>
+    <div class="title">Mananea — diario dedicado a María Andrea</div>
+    <div class="desc">Haz clic para leer el contenido completo.</div>
+  </a>
+</div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <div class="container">
+        <header class="section-header">
+          <h2>Projects</h2>
+          <p class="section-kicker">Things I’m building and shipping.</p>
+        </header>
+        <div id="projectsGrid" class="project-grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <small>© <span id="year"></span> Luis Casillas. Built with plain HTML/CSS/JS on GitHub Pages.</small>
+      <small class="mono">/ minimal · retro · perennial /</small>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
