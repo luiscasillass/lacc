@@ -1,68 +1,124 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>María Andrea y Luis 💞</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: radial-gradient(circle at center, #1a1a1a 0%, #000000 100%);
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    h1 {
+      font-size: 3em;
+      letter-spacing: 2px;
+      opacity: 0;
+      animation: fadeIn 3s ease forwards;
+    }
+
+    .heart {
+      position: relative;
+      width: 120px;
+      height: 120px;
+      transform: rotate(-45deg);
+      background: #e63946;
+      animation: beat 1.5s infinite ease-in-out;
+      margin-top: 20px;
+      opacity: 0;
+      animation: fadeIn 3s ease 2s forwards, beat 1.5s infinite ease-in-out 2.5s;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: #e63946;
+    }
+
+    .heart::before {
+      top: -60px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: 60px;
+      top: 0;
+    }
+
+    @keyframes beat {
+      0%, 100% {
+        transform: rotate(-45deg) scale(1);
+      }
+      50% {
+        transform: rotate(-45deg) scale(1.2);
+      }
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Partículas suaves */
+    .particle {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+      animation: floatUp 10s linear infinite;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(100vh) scale(0.5);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) scale(1.2);
+        opacity: 0;
+      }
+    }
+
+  </style>
 </head>
 <body>
+  <h1>María Andrea &nbsp;❤️&nbsp; Luis</h1>
+  <div class="heart"></div>
 
-  <header>
-    <img src="logo_tec.png" alt="logo tec" class="logo">
-    <p class="intro">mananea y Luis Andrés Casillas - A01645008
-    </p>
-    <p class="intro">27/03/2025
-    </p>
-    <h1>Construcción de Software y Toma de Desiciones</h1>
-    <h2>Explorando Nuestro Perfil como Desarrolladores</h2>
-  </header>
-
-  <main>
-    <section>
-      <h2>1. Formación y Aprendizaje</h2>
-      <ul>
-        <li>¿Cuál fue el motivo que elegiste desarrollo de software? Lo que me atrajo fue el potencial que tiene la computación para cambiar el mundo, y el software es lo que realmente mueve todo eso. Me impresionó ver cómo detrás de casi todo lo que usamos hoy (desde una app hasta un programa que maneja miles de datos) hay líneas de código que alguien escribió para resolver un problema. Me gustó la idea de poder construir cosas que sirvan, que escalen, que mejoren procesos o incluso que impacten a muchas personas. </li>
-        <li>¿Cuál fue la materia o proyecto más desafiante en tu formación y cómo lo superaste? Fue sin duda Cálculo Diferencial e Integral. Durante mucho tiempo estuve dando todo para sobresalir en la materia estudiando tiempos extras ya que fue mi primer acercamiento a dihcos temas.</li>
-        <li>¿Qué habilidades crees que son esenciales en la educación de un desarrollador y por qué? Primero iniciaré mencionando las Soft Skills ya que para crear sistemas o proyectos eficientes y escalables se ven involucradas un gran número de personas, las cuales es necesario saber liderar, empatizar y delegar. También es necesario un pensamiento crítico avanzado apto para la resolución de problemas ya que el mismo avance tan rápido de la industria exige a los ingenieros idear y crear sistemas más inteligentes y sofisticados. Por último yo creo que la inteligencia emocional es un pilar fundamental para una carrera exitosa. No es un tema muy sonado alrededor de los involucrados en la industria, sin embargo con los acercamientos que he tenido me he dado cuenta que es fundamental tener un nivel de inteligencia emocional elevado para poder competir dentro de la industria. </li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>2. Experiencia y Especialización</h2>
-      <ul>
-        <li>¿En qué área del desarrollo de software trabajas actualmente o te gustaría trabajar y por qué? Actualmente no estoy como desarrollador sino como SDR trabajando full time. Decidí entrar a un empleo de venta de software ya que quiero aprender como es la intersección entre los clientes y el producto de software que ofrecemos, creo firmemente que formará una base muy importante dentro de la carrera. Pasando algún tiempo me gustaría estara en un puesto de Project Manager o ingeniero en ciberseguridad ya que creo que ambas áreas aportan un gran valor crítico para las empresas. </li>
-        <li>¿Has trabajado en algún proyecto que te haya marcado o del que estés especialmente orgulloso? Sí, durante los últimos dos años estuve trabajando como vendedor y posteriormente como ingeniero en la área de bases de datos en la Startup JARO Freight. Mi trabajo en JARO me llevó a abrirme un gran camino tanto personal como profesional, me ayudó a orientarme sobre la marcha y a aprender a trabajar bajo presión, cualidades que siempre agradeceré haberlas aprendido a corta edad. </li>
-        <li>Si pudieras aprender una nueva tecnología o lenguaje este año, ¿cuál sería y por qué? Estoy aprendiendo ciberseguridad, me gustaría hacer los certificados de ComTIA ya que quiero tener un acercamiento a la industria para tener bases más importantes en mi desarrollo. </li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>3. Forma de Trabajar y Mentalidad</h2>
-      <ul>
-        <li>¿Eres más de trabajo en equipo o prefieres trabajar solo? ¿Por qué? Prefiero 100% trabajar en equipo. Me considero una persona muy social, me encanta crear nuevas relaciones y expandir cada vez más mi red de contactos. Al trabajar en equipo, si se hace una correcta estructuración, se puede llegar a crear productos o sistemas mucho más eficientes que siendo una sola persona. La colaboración, mezcla de culturas, ideas, pensamientos y experiencias es lo que enriquece a un gran equipo y por ende lleva a un gran resultado. </li>
-        <li>¿Cómo manejas los errores o bugs en tu código? Primero trato de hacer una profunda introspección crítica analizando si realmente estoy entendiendo, en primer lugar, el problema a resolver, en segundo, como lo estoy tratando de hacer. Depués de pasar por ese proceso, trato de resolver el problema en papel o pizarrón, tomando en cuenta todos los insights o puntos claves que debo de considerar, siempre y cuando sin perder de vista cuál busco que sea el resultado final. Si después de esto sigo sin poder resolverlo, busco ayuda con ingenieros experimentados. </li>
-        <li>¿Cuál es tu filosofía cuando trabajas en código de otros? Analizar y tratar de entender a profundidad la manera en que esta estructurado su código, después de esto, me apego lo más posible a mejorarlo, pero claro, siempre tomando en consideración que puede haber punto de mejora en la estructura, si esto es así, se debe de revisar con el resto del equipo.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>4. Tecnología y Tendencias</h2>
-      <ul>
-        <li>¿Qué herramienta, librería o framework descubriste recientemente? Durante mi estancia en JARO utilicé Selenium para hacer Web Scraping. La finalidad era extraer toda la información que nos pudiera ser valiosa sobre transportistas en México. Me gustó bastante ya que me di cuenta de como funcionaba WS y las ventajas que nos podría traer si la utilizábamos de manera correcta. </li>
-        <li>¿Qué fuente de información tecnológica recomiendas? Como referencia utilizo bastante la información que dan las empresas y personalidades en redes sociales, especialmente en X o también en sus sitios web oficiales.  </li>
-        <li>¿Qué tendencia tecnológica transformará la industria en 5 años? Será totalmente ML, DL y AI. Creo que estamos en una era de revolución tecnológica, una de las más importantes y que le traerá mas valor al ser humano. </li>
-      </ul> 
-    </section>
-
-    <section>
-      <h2>5. Un Toque Personal (15%)</h2>
-      <ul>
-        <li>¿Qué hobby disfrutas fuera de la programación y cómo influye en ti?</li>
-        <li>Si no fueras desarrollador, ¿qué harías? sería financiero o músico. Desde niño he tenido curiosidad de explorar ambas (en música desarrolle habilidades en piano, guitarra y acordeón)</li>
-        <li>Comparte una frase o enseñanza que te inspire. Si un pájaro se posa sobre una rama, ¿debería de confiar en la rama o en sus propias alas? </li>
-      </ul>
-    </section>
-  </main>
-
+  <script>
+    // Generar partículas flotantes
+    const numParticles = 25;
+    for (let i = 0; i < numParticles; i++) {
+      const particle = document.createElement("div");
+      particle.classList.add("particle");
+      const size = Math.random() * 8 + 3 + "px";
+      particle.style.width = size;
+      particle.style.height = size;
+      particle.style.left = Math.random() * 100 + "vw";
+      particle.style.animationDuration = Math.random() * 6 + 5 + "s";
+      particle.style.animationDelay = Math.random() * 5 + "s";
+      document.body.appendChild(particle);
+    }
+  </script>
 </body>
 </html>
-
