@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>María Andrea y Luis 💞</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: radial-gradient(circle at center, #1a1a1a 0%, #000000 100%);
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    h1 {
+      font-size: 3em;
+      letter-spacing: 2px;
+      opacity: 0;
+      animation: fadeIn 3s ease forwards;
+    }
+
+    .heart {
+      position: relative;
+      width: 120px;
+      height: 120px;
+      transform: rotate(-45deg);
+      background: #e63946;
+      animation: beat 1.5s infinite ease-in-out;
+      margin-top: 20px;
+      opacity: 0;
+      animation: fadeIn 3s ease 2s forwards, beat 1.5s infinite ease-in-out 2.5s;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: #e63946;
+    }
+
+    .heart::before {
+      top: -60px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: 60px;
+      top: 0;
+    }
+
+    @keyframes beat {
+      0%, 100% {
+        transform: rotate(-45deg) scale(1);
+      }
+      50% {
+        transform: rotate(-45deg) scale(1.2);
+      }
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Partículas suaves */
+    .particle {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+      animation: floatUp 10s linear infinite;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(100vh) scale(0.5);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) scale(1.2);
+        opacity: 0;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <h1>María Andrea &nbsp;❤️&nbsp; Luis</h1>
+  <div class="heart"></div>
+
+  <script>
+    // Generar partículas flotantes
+    const numParticles = 25;
+    for (let i = 0; i < numParticles; i++) {
+      const particle = document.createElement("div");
+      particle.classList.add("particle");
+      const size = Math.random() * 8 + 3 + "px";
+      particle.style.width = size;
+      particle.style.height = size;
+      particle.style.left = Math.random() * 100 + "vw";
+      particle.style.animationDuration = Math.random() * 6 + 5 + "s";
+      particle.style.animationDelay = Math.random() * 5 + "s";
+      document.body.appendChild(particle);
+    }
+  </script>
+</body>
+</html>
