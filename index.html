@@ -1,22 +1,94 @@
-<!doctype html><html lang="es"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>LimpiaGDL – Mapa Limpio GDL</title>
-<link rel="icon" href="data:,">
-<style>
-  body{margin:0;font-family:system-ui;background:#fafafa;color:#111}
-  header{padding:16px 20px;border-bottom:1px solid #eee}
-  h1{margin:0;font-size:20px} .sub{color:#555;font-size:13px}
-  #wrap{max-width:980px;margin:18px auto;padding:0 16px}
-  canvas{display:block;margin:12px auto;border:1px solid #eee;border-radius:10px;background:#fff}
-  .note{font-size:13px;color:#666;margin:8px 0}
-</style>
-<script src="https://cdn.jsdelivr.net/npm/p5@1.9.3/lib/p5.min.js"></script>
-</head><body>
-<header>
-  <h1>LimpiaGDL <span class="sub">· Mapa Limpio GDL</span></h1>
-</header>
-<div id="wrap">
-  <div class="note">Presiona 1: WWW · 2: API Aire GDL · 3: Proyecto. Sube <b>poster.jpg</b> al repo si quieres mostrar póster antiguo.</div>
-</div>
-<script src="sketch.js"></script>
-</body></html>
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LimpioGDL — Reportes ciudadanos de basura y contaminación</title>
+  <meta name="description" content="Mapa ciudadano de basura y contaminación en Guadalajara. Reporta puntos, prioriza limpieza y previene inundaciones."/>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%2306c167'/%3E%3Cpath d='M25 55l15 15 35-35' stroke='white' stroke-width='10' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://{s}.tile.openstreetmap.org">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <div class="brand">Limpio<span>GDL</span></div>
+      <nav class="nav">
+        <a href="#mapa">Mapa</a>
+        <a href="#como-funciona">Cómo funciona</a>
+        <a href="#contacto" class="cta">Quiero participar</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>Mapa limpio, colonias seguras</h1>
+        <p class="lead">Aplicación web donde la comunidad marca puntos con basura o contaminación. Los reportes se visualizan en tiempo real con colores por nivel, junto con canales y alcantarillas cercanas.</p>
+        <div class="actions">
+          <a href="#mapa" class="btn primary">Ver demo</a>
+          <a href="#como-funciona" class="btn ghost">Cómo funciona</a>
+        </div>
+      </div>
+      <ul class="features">
+        <li>✔ Reportes geolocalizados</li>
+        <li>✔ Niveles: <b>verde</b>, <b>amarillo</b>, <b>rojo</b></li>
+        <li>✔ Capas de canales/alcantarillas</li>
+        <li>✔ Datos listos para priorizar limpieza</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="mapa" class="map-section">
+    <div class="wrap">
+      <h2>Demo del mapa</h2>
+      <p class="sub">Puntos de ejemplo en Guadalajara. Los colores indican acumulación estimada. La línea gris representa un canal/alcantarillado principal.</p>
+      <div id="map"></div>
+      <div class="legend">
+        <span><i style="background:#2ecc71"></i> Bajo</span>
+        <span><i style="background:#f1c40f"></i> Medio</span>
+        <span><i style="background:#e74c3c"></i> Alto</span>
+        <span><i class="canal"></i> Canal/alcantarilla</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="como-funciona" class="how">
+    <div class="wrap grid-3">
+      <div class="card">
+        <h3>1. Marca</h3>
+        <p>La persona hace clic en el mapa, sube foto y describe el punto con basura o contaminación.</p>
+      </div>
+      <div class="card">
+        <h3>2. Visualiza</h3>
+        <p>El sistema colorea la zona según el nivel y muestra canales/alcantarillas cercanos para prevenir riesgos.</p>
+      </div>
+      <div class="card">
+        <h3>3. Prioriza</h3>
+        <p>Cuadrillas y voluntarios coordinan limpieza y cierran el reporte cuando queda resuelto.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" class="cta-strip">
+    <div class="wrap strip-grid">
+      <div>
+        <h2>Súmate a LimpioGDL</h2>
+        <p>Buscamos colonias piloto y aliados. Escríbeme para integrar tu zona.</p>
+      </div>
+      <a class="btn primary large" href="mailto:kuiscasillas@gmail.com">Contacto</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap">
+      <small>© 2025 LimpioGDL · Hecho en GDL · Datos base: OpenStreetMap</small>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="script.js"></script>
+</body>
+</html>
