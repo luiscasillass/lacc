@@ -1,41 +1,91 @@
-:root{--bg:#fafafa;--fg:#111;--muted:#6b7280;--pri:#06c167;--pri-d:#059957;--line:#e5e7eb}
-*{box-sizing:border-box} html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
-.wrap{max-width:1100px;margin:0 auto;padding:0 18px}
-.topbar{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--line);z-index:10}
-.brand{font-weight:800;font-size:18px} .brand span{color:var(--pri)}
-.nav{display:flex;gap:14px;align-items:center} .nav a{color:#111;text-decoration:none;padding:8px 10px;border-radius:10px}
-.nav .cta{background:#111;color:#fff}
-.topbar .wrap{display:flex;align-items:center;justify-content:space-between;padding:12px 18px}
+/* --- UI BÁSICO-FUNCIONAL (sin adornos) --- */
 
-.hero{padding:40px 0;background:linear-gradient(180deg,#fff, #f7f7f7)}
-.hero-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:24px;align-items:center}
-h1{font-size:34px;line-height:1.15;margin:0 0 10px}
-.lead{color:var(--muted);margin:0 0 14px}
-.actions{display:flex;gap:10px}
-.btn{display:inline-block;padding:10px 14px;border-radius:12px;border:1px solid var(--line);text-decoration:none}
-.btn.primary{background:var(--pri);border-color:var(--pri);color:#fff}
-.btn.primary:hover{background:var(--pri-d);border-color:var(--pri-d)}
-.btn.ghost{background:#fff}
-.btn.large{font-size:18px;padding:12px 18px}
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  padding: 0;
+  font: 14px/1.4 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  color: #111;
+  background: #fff;
+}
 
-.features{list-style:none;margin:0;padding:0;border-left:4px solid var(--pri);padding-left:14px;color:#1f2937}
-.features li{margin:10px 0}
+/* Layout contenedor simple */
+.wrap { max-width: 960px; margin: 0 auto; padding: 0 12px; }
 
-.map-section{padding:36px 0}
-#map{height:460px;border:1px solid var(--line);border-radius:14px}
-.legend{display:flex;gap:16px;align-items:center;margin-top:10px;color:#374151}
-.legend i{display:inline-block;width:14px;height:14px;border-radius:50%;vertical-align:middle;margin-right:6px;border:1px solid #d1d5db}
-.legend i.canal{border-radius:3px;width:24px;height:4px;background:#9ca3af;border:none}
+/* Header plano */
+.topbar {
+  position: sticky; top: 0;
+  background: #f6f6f6;
+  border-bottom: 1px solid #ddd;
+}
+.topbar .wrap { display: flex; align-items: center; justify-content: space-between; padding: 10px 12px; }
+.brand { font-weight: 700; }
+.brand span { color: #111; font-weight: 700; }
 
-.how{padding:36px 0;background:#fff}
-.grid-3{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
-.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px}
+/* Navegación: links simples */
+.nav { display: flex; gap: 10px; align-items: center; }
+.nav a {
+  color: #111; text-decoration: underline; padding: 0; background: none; border: 0;
+}
 
-.cta-strip{padding:28px 0;background:#111;color:#fff}
-.strip-grid{display:grid;gap:16px;grid-template-columns:1fr auto;align-items:center}
+/* Hero sin grid ni botones de “marketing” */
+.hero { padding: 14px 0; background: #fff; }
+.hero-grid { display: block; }
+h1 { margin: 0 0 6px; font-size: 20px; line-height: 1.2; }
+.lead { margin: 6px 0 8px; color: #333; }
+.actions { display: none; }        /* ocultamos CTA visuales */
+.features { margin: 8px 0 0; padding-left: 16px; }
+.features li { margin: 4px 0; }
 
-.footer{padding:22px 0;background:#fff;border-top:1px solid var(--line);text-align:center}
+/* Sección mapa minimalista */
+.map-section { padding: 12px 0; }
+#map {
+  height: 420px;
+  border: 1px solid #ccc;
+  border-radius: 0;
+}
+.legend {
+  margin-top: 6px;
+  display: flex; gap: 12px; align-items: center; color: #222;
+}
+.legend i {
+  display: inline-block; width: 12px; height: 12px; border-radius: 50%;
+  vertical-align: middle; margin-right: 6px; border: 1px solid #bbb;
+}
+.legend i.canal { width: 22px; height: 4px; border-radius: 0; background: #888; border: none; }
 
-@media (max-width: 900px){
-  .hero-grid{grid-template-columns:1fr}
+/* “Cómo funciona” sin tarjetas ni sombras */
+.how { padding: 12px 0; background: #fff; }
+.grid-3 { display: block; }
+.card {
+  padding: 8px 0;
+  border-top: 1px solid #e5e5e5;
+  border-bottom: none;
+  border-left: none; border-right: none;
+  border-radius: 0;
+}
+.card h3 { margin: 0 0 4px; font-size: 16px; }
+.card p { margin: 0 0 8px; }
+
+/* Tira de contacto básica */
+.cta-strip { padding: 12px 0; background: #f6f6f6; color: #111; }
+.strip-grid { display: flex; gap: 10px; align-items: center; justify-content: space-between; }
+.btn, .btn.primary, .btn.ghost, .btn.large {
+  all: unset;                        /* elimina estilos “botón” */
+  color: #0645ad; text-decoration: underline; cursor: pointer;
+}
+
+/* Footer plano */
+.footer {
+  padding: 10px 0;
+  background: #fff;
+  border-top: 1px solid #ddd;
+  text-align: left;
+}
+.footer small { color: #444; }
+
+/* Responsivo simple */
+@media (max-width: 900px) {
+  #map { height: 360px; }
+  .strip-grid { flex-direction: column; align-items: flex-start; }
 }
